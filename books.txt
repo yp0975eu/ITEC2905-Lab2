@@ -1,0 +1,7 @@
+# tab-delimited values for sample data for Brandon
+TITLE	EDITION AUTHOR	COURSE	ISBN	PRICE	SELLER	SOLD
+Ace the IT Resume	2ND	Moreira	ITEC 2950	978-0-07-149274-4	5.50	tk0654wm	false
+Ace the IT Interview	2ND	Moreira	ITEC 2950	978-0071495783	4.75	tk0654wm	false
+Introducing Python: Modern Computing in Simple Packages	1ST	O'Reilly	ITEC 2905	978-1449359362	50.00	tk0654wm	false
+
+
