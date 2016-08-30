@@ -3,7 +3,7 @@ TITLE	EDITION AUTHOR	COURSE	ISBN	PRICE	SELLER	SOLD
 Ace the IT Resume	2ND	Moreira	ITEC 2950	978-0-07-149274-4	5.50	tk0654wm	false
 Ace the IT Interview	2ND	Moreira	ITEC 2950	978-0071495783	4.75	tk0654wm	false
 Introducing Python: Modern Computing in Simple Packages	1ST	O'Reilly	ITEC 2905	978-1449359362	50.00	tk0654wm	false
-
+Little Seagull Handbook, The    2ND Bullock ENGL1110    978-0-393-93581-3   5.25    tk0654wm    false
 
 
 Systems Analysis and Design TENTH EDITION Shelly cashmane series, RosenBlatt ITEC 2710 978-1285171340 6.60
