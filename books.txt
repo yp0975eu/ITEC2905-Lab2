@@ -5,3 +5,9 @@ Ace the IT Interview	2ND	Moreira	ITEC 2950	978-0071495783	4.75	tk0654wm	false
 Introducing Python: Modern Computing in Simple Packages	1ST	O'Reilly	ITEC 2905	978-1449359362	50.00	tk0654wm	false
 
 
+
+Systems Analysis and Design TENTH EDITION Shelly cashmane series, RosenBlatt ITEC 2710 978-1285171340 6.60
+murach's C# 2012 5th edition Joe Murach, Anne boehm ITEC 2505 978-1-890774-12-1 8.50
+Microsoft Access 2013 enhanced edition Shelly Cashman SERIES, PRATT LAST978-1-305-50115-7 7.00
+Murach's SQL Server 2012 for developer 1ST EDITION BRYAN SYVERSON, JOEL MURACH  ITEC 1460 978-1-890774-69-1 9.50
+THE ST.MARTIN'S HANDBOOK SEVENTH EDITHION ANDRA A. LUNSFORD ENG 1111 978-1-4576-0622-9 3.50
