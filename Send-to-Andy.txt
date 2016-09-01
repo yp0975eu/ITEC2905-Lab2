@@ -4,7 +4,7 @@ Here is how we've broken down the assignment by team member (in alphabetical ord
 Anna:
 -set up initial menu for user input
 -added seed data for textbook database
--create course object and start defining methods for object
+-create course object and start defining methods for object.
 
 Branden:
 -set up database
