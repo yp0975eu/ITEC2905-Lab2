@@ -1,2 +1,13 @@
-Here is how we've broken down the assignment by team member:
+Here is how we've broken down the assignment by team member (in alphabetical order):
 
+
+Anna:
+-set up initial menu for user input
+-added seed data for textbook database
+
+Branden:
+-set up database
+-added seed data for textbook database
+
+Marina
+-added seed data for textbook database
