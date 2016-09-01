@@ -1,9 +1,17 @@
+
+# Test to see if DB creations works
+#
+#  from Database import DB
+#  DB.init_db()
+#  quit()
+#
+
 # empty main method to verify push works -- amdudda
 
 # starting to create main menu
 # will push this new comment and then Brandon will demo merging for Marian
-
 # some static values for the menu options so we don't have to recode a bunch of stuff if we change the numbers
+
 OPTION_BYCOURSENAME = '1'
 OPTION_BYTITLE = '2'
 OPTION_BYISBN = '3'
