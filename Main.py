@@ -46,7 +46,7 @@ def do_menu():
         elif userchoice == OPTION_BYCOURSEID:
             print("This option to search by course ID has not been implemented.")
         else:
-            print("You have not made a valid selection.  Pleae try again.")
+            print("You have not made a valid selection.  Please try again.")
 
 # BODY OF CODE
 print("Welcome to the used book browser!\n")
