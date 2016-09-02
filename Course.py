@@ -19,6 +19,10 @@ class Course():
     def getDepartment(self):
         return self.Department
 
+    def __str__(self):
+        # this lets us stringify a course's information
+        return self.ID + ": " + self.Department + ", " + self.Name
+
 # and some generic methods to pull data out of the database
 
 def getByDepartment(Department):
