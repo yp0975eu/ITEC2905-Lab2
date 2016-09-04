@@ -1,13 +1,13 @@
-# tab-delimited values for sample data for Brandon
-TITLE	EDITION AUTHOR	COURSE	ISBN	PRICE	SELLER	SOLD
-Ace the IT Resume	2ND	Moreira	ITEC 2950	978-0-07-149274-4	5.50	tk0654wm	false
-Ace the IT Interview	2ND	Moreira	ITEC 2950	978-0071495783	4.75	tk0654wm	false
-Introducing Python: Modern Computing in Simple Packages	1ST	O'Reilly	ITEC 2905	978-1449359362	50.00	tk0654wm	false
-Little Seagull Handbook, The    2ND Bullock ENGL1110    978-0-393-93581-3   5.25    tk0654wm    false
-
-
-Systems Analysis and Design TENTH EDITION Shelly cashmane series, RosenBlatt ITEC 2710 978-1285171340 6.60
-murach's C# 2012 5th edition Joe Murach, Anne boehm ITEC 2505 978-1-890774-12-1 8.50
-Microsoft Access 2013 enhanced edition Shelly Cashman SERIES, PRATT LAST978-1-305-50115-7 7.00
-Murach's SQL Server 2012 for developer 1ST EDITION BRYAN SYVERSON, JOEL MURACH  ITEC 1460 978-1-890774-69-1 9.50
-THE ST.MARTIN'S HANDBOOK SEVENTH EDITHION ANDRA A. LUNSFORD ENG 1111 978-1-4576-0622-9 3.50
+[{'title'='Ace the IT Resume','edition'='2','author'='Moreira','department'='ITEC','course'='2950','isbn'='978-0-07-149274-4','price'='5.50', 'user' = 'tk0654wm', 'status'='available'},
+{'title'='Ace the IT Interview','edition'='2','author'='Moreira','department'='ITEC','course'='2950','isbn'='978-0071495783','price'='4.75', 'user' = 'tk0654wm', 'status'='available'},
+{'title'='Introducing Python: Modern Computing in Simple Packages','edition'='1','author'='O\'Reilly','department'='ITEC','course'='2905','isbn'='978-1449359362','price'='50.00', 'user' = 'tk0654wm', 'status'='available'},
+{'title'='The Little Seagull Handbook','edition'='2','author'='Bullock','department'='ENGL','course'='2905','isbn'='978-0-393-93581-3','price'='5.25', 'user' = 'tk0654wm', 'status'='available'},
+{'title'='Systems Analysis and Design','edition'='10','author'='Shelly Cashman','department'='ITEC','course'='2710','isbn'='978-1285171340','price'='6.60', 'user' = 'xa7043pf', 'status'='available'},
+{'title'='Murach\'s C# 2012','edition'='5','author'='Joe Murach','department'='ITEC','course'='2505','isbn'='978-1-890774-12-1','price'='8.50', 'user' = 'xa7043pf', 'status'='available'},
+{'title'='Microsoft Access 2013','edition'='null','author'='Philip J. Pratt;Mary Z. Last','department'='ITEC','course'='1375','isbn'='978-1-890774-12-1','price'='7.00', 'user' = 'xa7043pf', 'status'='available'},
+{'title'='Murach's SQL Server 2012 for Developers','edition'='1','author'='Bryan Syverson; Joel Murach','department'='ITEC','course'='1460','isbn'='978-1-890774-69-1','price'='9.50', 'user' = 'xa7043pf', 'status'='available'},
+{'title'='The St. Martin\'s Handbook','edition'='7','author'='Andrea A. Lunsford','department'='ENGL','course'='1111','isbn'='978-1-4576-0622-9','price'='3.50', 'user' = 'xa7043pf', 'status'='available'},
+{'title'='The St. Martin\'s Handbook','edition'='8','author'='Andrea A. Lunsford','department'='ENGL','course'='1111','isbn'='978-1-4576-0622-9','price'='3.50', 'user' = 'yp0975eu', 'status'='available'},
+{'title'='Current Issues and Enduring Questions; A Guide to Critical Thinking and Argument, with Readings','edition'='10','author'='Sylvan Barnet; Hugo Bedau','department'='ENGL','course'='1111','isbn'='978-1-4576-2260-1','price'='15.00', 'user' = 'yp0975eu', 'status'='available'},
+{'title'='New Perspectives on Microsoft Windows 7 for Power Users','edition'='1','author'='Harry A. Philips','department'='ITEC','course'='1250','isbn'='978-1-4576-2260-1','price'='13.63', 'user' = 'yp0975eu', 'status'='available'},
+{'title'='Microsoft Access 2013','edition'='enhanced','author'='Philip J. Pratt;Mary Z. Last','department'='ITEC','course'='1375','isbn'='978-1-111-52649-8','price'='7.00', 'user' = 'yp0975eu', 'status'='available'}]
