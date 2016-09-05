@@ -67,7 +67,7 @@ def getByCourseID(CourseID):
         conn = sqlite3.connect("textbook.db")
 
         # return a single record - there should only be one result anyway
-        cursor = conn.execute("SELECT * FROM courses WHERE ID = ?;", CourseID).fetchone()
+        cursor = conn.execute("SELECT * FROM courses WHERE ID = ?;", (CourseID,)).fetchone()
 
         # grab the data and create a course object
         cID = cursor[0]
