@@ -2,7 +2,8 @@
 # Test to see if DB creations works
 #
 #  from Database import DB
-#  DB.init_db()
+#  db = DB()
+#  db.init_db
 #  quit()
 #
 
