@@ -1,0 +1,45 @@
+Objects that we need, attributes they have, and the methods they need
+
+
+
+Entry
+----------
+attributes
+----------
+bookID
+title
+edition
+department
+course
+isbn
+price
+username
+status
+course.id ( found by querying for department_name and course_number)
+----------
+methods
+----------
+---create methods--
+new_entry(title, edition, department, course, isbn, price, username, status)
+    returns true on success
+new_course(department, course)
+    returns ROWID or false
+new_user(username)
+    returns a new userID, a previously insertedID, or false
+
+---read methods----
+get_course_id( department, course)
+    returns ROWID or false
+get_user(username)
+    returns true or false
+get_entries_by_title(title)
+get_all_departments()
+    returns all departments
+get_entries_by_department(department)
+    returns a list of all course_nums inside of department and their ROWIDs
+get_entries_by_course_num(course_num)
+get_course_rowid(department, course_num)
+
+--update methods-----
+
+--delete methods-----
