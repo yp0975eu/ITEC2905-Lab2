@@ -30,6 +30,7 @@ class DB:
 
     # Initialize a database if there isn't one already
     def init_db(self):
+        db_meta_sql = 'CREATE TABLE IF NOT EXISTS db_meta  ( version REAL, last_update DATETIME);'
         user_sql = 'CREATE TABLE IF NOT EXISTS users  ( username VARCHAR(8) PRIMARY KEY);'
         course_sql = '''CREATE TABLE IF NOT EXISTS courses(
                course     TEXT NOT NULL,
@@ -58,6 +59,7 @@ class DB:
             cur.execute(user_sql)
             cur.execute(course_sql)
             cur.execute(books_sql)
+            cur.execute(db_meta_sql)
             self.seed_data()
         except sqlite3.OperationalError as o_err:
             print(o_err,"err")
@@ -151,7 +153,7 @@ class DB:
     # takes a field to search and a value to search for
     # for example 'title', 'Microsoft'
     def select_book(self, field, value):
-        sql = 'SELECT *, FROM books WHERE ?=%?%;'
+        sql = 'SELECT * FROM books WHERE ?=%?%;'
         cursor = self.__db_cursor
         try:
             cursor.execute(sql, (field, value,))
