@@ -1,11 +1,7 @@
+from Database import DB
 
-# Test to see if DB creations works
-#
-#  from Database import DB
-#  db = DB()
-#  db.init_db
-#  quit()
-#
+# initialize DB object, seeding database if necessary.
+db = DB()
 
 # some static values for the menu options so we don't have to recode a bunch of stuff if we change the numbers
 
@@ -18,6 +14,7 @@ OPTION_QUIT = '6'
 
 # FUNCTIONS USED BY MAIN METHOD
 
+
 def showmenu():
     # shows the option menu at launch
     menu = "Select an option:\n"
@@ -29,12 +26,13 @@ def showmenu():
             "6.\t Quit\n"
     print(menu)
 
+
 def do_menu():
     # calls showmenu and acts on the choice made
     # TODO build objects and methods to handle the user's selections.
     while True:
         showmenu()
-        userchoice = raw_input("> ")
+        userchoice = input("> ")
         # act on choice
         if userchoice == OPTION_QUIT:
             # quit the program
