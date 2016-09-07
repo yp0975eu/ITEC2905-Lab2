@@ -7,7 +7,6 @@ import json
 # users ( username<primary key> ) TODO: will probably add more to the user class
 
 
-
 class DB:
     # Class variable shared by all instances of the DB class
     # https://docs.python.org/2/tutorial/classes.html#class-and-instance-variables
@@ -24,7 +23,7 @@ class DB:
     # To add a table, enter the name to this tuple, then create a method with
     # make_table_<table_name> that contains the table sql,
     # see make_table_users for an example
-    __table_names = ('books', 'users', 'db_meta', 'course')
+    __table_names = ('books', 'users', 'db_meta', 'courses')
 
     def __init__(self):
         try:
@@ -81,11 +80,12 @@ class DB:
         cur = self.__db_cursor
         # table names cannot be parametrized arguments?
         # http://stackoverflow.com/questions/3247183/variable-table-name-in-sqlite
-        sql = "SELECT count(*) FROM books;"
+        sql = "SELECT count(ROWID) FROM books;"
         try:
             # execute takes a tuple for arg2
             cur.execute(sql)
-            return cur.rowcount
+            count = cur.fetchall()
+            return count[0][0]
         except sqlite3.OperationalError as o_err:
             print("Table data check Operational Error", o_err)
         except sqlite3.DatabaseError as db_err:
@@ -99,9 +99,9 @@ class DB:
         sql = 'CREATE TABLE IF NOT EXISTS users  ( username VARCHAR(8) PRIMARY KEY);'
         self.make_table(sql)
 
-    def make_table_course(self):
+    def make_table_courses(self):
         sql = '''CREATE TABLE IF NOT EXISTS courses(
-               course     TEXT NOT NULL,
+               course         TEXT NOT NULL,
                department     VARCHAR(4) NOT NULL,
                PRIMARY KEY (course, department)
                );'''
@@ -217,17 +217,23 @@ class DB:
             return cursor.lastrowid
             # username is a string,
 
-    # returns a list of rows
-    # takes a field to search and a value to search for
-    # for example 'title', 'Microsoft'
-    def select_book(self, field, value):
-        sql = 'SELECT * FROM books WHERE ?=%?%;'
+    def list(self, sql):
         cursor = self.__db_cursor
         try:
-            cursor.execute(sql, (field, value,))
+            cursor.execute(sql)
             # index 0 is the row ID
             return cursor.fetchall()
         except sqlite3.DatabaseError as db_err:
-            print(db_err, "Values: (" + field + " " + value + ")")
+            print("Select Error ", db_err)
+    # returns list of rows
+
+    def select(self, sql, values):
+        cursor = self.__db_cursor
+        try:
+            cursor.execute(sql, values)
+            # index 0 is the row ID
+            return cursor.fetchall()
+        except sqlite3.DatabaseError as db_err:
+            print("Select Error ", db_err)
 
 
