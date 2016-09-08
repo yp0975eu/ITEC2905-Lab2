@@ -21,6 +21,23 @@ class Course():
     def getDepartment(self):
         return self.Department
 
+    def getRecID(self):
+        # fTODO: this doens't actually return a record ID. Are there only two fields in the table?
+        # fetches the record ID associated with a book
+        try:
+            conn = sqlite3.connect("textbook.db")
+            qryString = "SELECT * FROM courses WHERE course=? AND department=?;"
+            cursor = conn.execute(qryString, (self.CourseNum, self.Department)).fetchone()
+            return cursor[2]
+        except sqlite3.Error as e:
+            # report an error and roll back the changes
+            print("Unable to retrieve record id from course table: " + str(self))
+            if DEV: traceback.print_exc()
+            conn.rollback()
+            return None
+        finally:
+            conn.close()
+
     def insert(self):
         try:
             conn = sqlite3.connect("textbook.db")
@@ -115,4 +132,3 @@ def getByCourseID(CourseID):
         # return whatever we find - either a course object or None
         return course
 # end getByCourseID
-

@@ -1,25 +1,21 @@
-class book():
+import sqlite3,traceback
+DEV = True
 
+class Book():
+    # Create a Book object
+    def __init__(self, bookID, title, author, edition, course, username, ISBN, price, status):
+        # initialize a Book object
+        self.ID = bookID
+        self.title = title
+        self.author = author
+        self.edition = edition
+        self.courseNum = course
+        self.username = username
+        self.isbn = ISBN
+        self.price = price
+        self.status = status
 
- def __init__(self, bookID, title, edition, author, ISBN, price, coursID, false=None):
-    # initialize a course object
-    self.ID = bookID
-    self.Title = title
-    self.edition = edition
-    self.author = author
-    self.isbn = ISBN
-    self.price = price
-    self.courseID = coursID
-    self.soldout = false
-# to check if book sold out and not availble  but I don't know  if it can work out
-    # right way to code
-    def sold_out(self):
-        price(self.soldout)
-        return self.soldout
-# to add new book on list but i don't know if it is working out
-def addbook(self, title, edition, author, ISBN, price):
-    add_book = book(title, edition, author, ISBN, price)
-#
+    # some getters
     def get_courseID(self):
         return self.courseID
 
@@ -29,8 +25,75 @@ def addbook(self, title, edition, author, ISBN, price):
     def getISBN(self):
         return self.ISBN
 
+    # some setters
+    def setCourseNum(self,ID):
+        self.courseNum = ID
 
-def __str__(self):
-    # this lets us stringify a book's information
-    return self.ID + ": " + self.title + ", " + self.edition + ", " \
-           + self.author + ", " + self.ISBN + ", " + self.price
+    def setTitle(self,title):
+        self.title = title
+
+    def setAuthor(self,auth):
+        self.author = auth
+
+    def setPrice(self,price):
+        self.price = price
+
+    def setStatus(self,status):
+        self.status = status
+
+    def setSold(self):
+        # a quick'n'easy way to set a book as having been sold
+        self.status = True
+
+    # to check if Book sold and not availble
+    # right way to code
+    def isSold(self):
+        return self.status
+
+    # to add new Book to database
+    def insert(self):
+        qryString = "INSERT INTO books VALUES (?,?,?,?,?,?,?,?);"
+        values = (self.title,
+            self.author,
+            self.edition,
+            self.courseNum,
+            self.username,
+            self.isbn,
+            self.price,
+            self.status)
+        try:
+            conn = sqlite3.connect("textbook.db")
+            conn.execute(qryString, values)
+            conn.commit()
+        except sqlite3.Error as e:
+            # report an error and roll back the changes
+            print("Unable to insert record into books table: " + str(self))
+            if DEV: traceback.print_exc()
+            conn.rollback()
+        finally:
+            conn.close()
+    # end insert
+
+    def update(self,field,value):
+        # updates the value of a field for a given book
+        qryString = "UPDATE books SET " + field + " = ? WHERE id = " + self.ID
+        try:
+            conn = sqlite3.connect("textbook.db")
+            conn.execute(qryString, value)
+            conn.commit()
+        except sqlite3.Error as e:
+            # report an error and roll back the changes
+            print("Unable to update record in books table: " + str(self))
+            if DEV: traceback.print_exc()
+            conn.rollback()
+        finally:
+            conn.close()
+    # end update
+
+    def __str__(self):
+        # this lets us stringify a Book's information
+        return self.ID + ": " + self.title + ", " + self.edition + ", " \
+               + self.author+ ", " + self.courseNum + ", " + self.ISBN + ", " + self.price
+# end Book
+
+
