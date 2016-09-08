@@ -1,6 +1,5 @@
 import sqlite3,traceback
 DEV = True
-# test merge to master
 
 class Book():
     # Create a Book object
