@@ -61,6 +61,7 @@ def do_menu():
                 print_results(results)
             else:
                 print("No matches, try a department search.")
+
         elif userchoice == OPTION_BYTITLE:
             title = input("Enter book title: ")
             results = search.by_book_title(title)
@@ -68,7 +69,6 @@ def do_menu():
                 print_results(results)
             else:
                 print("No matches, try a department search.")
-            print("This option to search by book title has not been implemented.")
         elif userchoice == OPTION_BYISBN:
             searchByIsbn()
         elif userchoice == OPTION_BYDEPARTMENT:
@@ -78,7 +78,6 @@ def do_menu():
                 print_results(results)
             else:
                 print("No matches")
-            print("This option to search by course department has not been implemented.")
         elif userchoice == OPTION_LISTDEPARTMENTS:
             results = search.list_departments()
             if results:
