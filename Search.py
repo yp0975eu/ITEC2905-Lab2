@@ -19,7 +19,8 @@ class Search:
         return result
 
     def by_department(self, department):
-        sql = "SELECT * FROM books WHERE course = (SELECT ROWID FROM courses WHERE department = ?);"
+
+        sql = "SELECT * FROM books INNER JOIN courses WHERE books.course=courses.ROWID AND department = ?;"
         params = (department,)
         result = self.__DB.select(sql, params)
         return result
