@@ -1,5 +1,7 @@
 from Database import DB
 from Search import Search
+# this one, we want to explicitly call Validator so we signal that's what we're doing.
+import Validator
 
 # initialize DB object, seeding database if necessary.
 db = DB()
@@ -68,8 +70,7 @@ def do_menu():
                 print("No matches, try a department search.")
             print("This option to search by book title has not been implemented.")
         elif userchoice == OPTION_BYISBN:
-            # TODO: Change format of isbns to not inlude dashes, or add dashes on the backend for searching
-            print("This option to search by book ISBN has not been implemented.")
+            searchByIsbn()
         elif userchoice == OPTION_BYDEPARTMENT:
             dept = input("Enter department ID ")
             results = search.by_department(dept)
@@ -86,6 +87,19 @@ def do_menu():
                 print("No departments to choose from , something is fishy :/")
         else:
             print("You have not made a valid selection.  Please try again.")
+
+
+def searchByIsbn():
+    print("This option to search by book ISBN has not been fully implemented.")
+    isbn = input("Please enter the ISBN number you wish to search for.  Leave out the dashes and spaces.")
+    # pull out dashes and spaces if they're input anyway
+    isbn = isbn.replace("-","").replace(" ", "")
+    # TODO: finish implementation of search by ISBN.
+    if Validator.isValidISBN(isbn):
+        print("You have entered a valid ISBN")
+    else:
+        print("You have not entered a valid ISBN")
+
 
 # BODY OF CODE
 print("Welcome to the used book browser!\n")
