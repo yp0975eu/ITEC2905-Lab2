@@ -90,6 +90,7 @@ def do_menu():
 
 
 def searchByIsbn():
+    # TODO remove this line when implementation completed.
     print("This option to search by book ISBN has not been fully implemented.")
     isbn = input("Please enter the ISBN number you wish to search for.  Leave out the dashes and spaces.")
     # pull out dashes and spaces if they're input anyway
@@ -99,6 +100,11 @@ def searchByIsbn():
         print("You have entered a valid ISBN")
     else:
         print("You have not entered a valid ISBN")
+    results = search.by_book_isbn(isbn)
+    if results:
+        print_results(results)
+    else:
+        print("No matches, try another search.")
 
 
 # BODY OF CODE
