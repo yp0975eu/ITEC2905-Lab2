@@ -98,13 +98,14 @@ def searchByIsbn():
     # TODO: finish implementation of search by ISBN.
     if Validator.isValidISBN(isbn):
         print("You have entered a valid ISBN")
+        results = search.by_book_isbn(isbn)
+        if results:
+            print_results(results)
+        else:
+            print("No matches, try another search.")
     else:
-        print("You have not entered a valid ISBN")
-    results = search.by_book_isbn(isbn)
-    if results:
-        print_results(results)
-    else:
-        print("No matches, try another search.")
+        print("You have not entered a valid ISBN.")
+
 
 
 # BODY OF CODE
