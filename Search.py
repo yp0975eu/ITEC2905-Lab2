@@ -9,6 +9,8 @@ class Search:
         sql = "SELECT * FROM books WHERE course = (SELECT ROWID FROM courses WHERE course =?);"
         params = (course_num,)
         result = self.__DB.select(sql, params)
+        # got idea to return None from:
+        # http://stackoverflow.com/questions/11630207/how-can-i-check-if-sqlite-cursor-result-from-a-select-statement-is-empty
         if not result:
             return None
         return result
