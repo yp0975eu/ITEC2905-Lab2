@@ -86,63 +86,58 @@ def do_menu():
             else:
                 print("No departments to choose from , something is fishy :/")
         elif userchoice == OPTION_ADD:
-
-            print("Enter a book title")
-            title = input("> ")
-            while len(title) < 4:
-                print("Title must be at least 4 characters.\nEnter a book title")
-                title = input("> ")
-
-            print("Enter a author")
-            author = input("> ")
-            while len(author) < 4:
-                print("Author must be at least 4 characters.\nEnter author")
-                author = input("> ")
-
-            print("Enter edition")
-            edition = input("> ")
-            while not edition.isnumeric():
-                print("Edition cannot only be numbers.\nEnter edition")
-                edition = input("> ")
-
-            print("Enter course number")
-            course_number = input("> ")
-            while Validator.isValidCourseNum(course_number):
-                print("Course number must be 4 numbers")
-                course_number = input("> ")
-
-            print("Enter Department")
-            department = input("> ")
-            while Validator.isValidDepartment(department):
-                print("Department must be 4 letters")
-                department = input("> ")
-
-            print("Enter star ID")
-            star_id = input("> ")
-            while re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
-                print("Department must be a combination of 7 letters and numbers")
-                star_id = input("> ")
-
-            print("Enter isbn")
-            isbn = input("> ")
-            while Validator.isValidISBN(isbn):
-                print("ISBN must be 10 or 13 numbers")
-                isbn = input("> ")
-
-            print("Enter price")
-            price = input(">")
-            while Validator.isValidPrice(price):
-                print("Price must be a decimal number")
-                price = input("> ")
-
-            status = 'available'
-            book = Book.Book(title, author, edition, course_number, department, star_id, isbn, price, status)
-            # DB.newEntry(Book)
-            book.insert()
-
+            # add a new book
+            addNewBook()
         else:
             print("You have not made a valid selection.  Please try again.")
 
+
+def addNewBook():
+    print("Enter a book title")
+    title = input("> ")
+    while len(title) < 4:
+        print("Title must be at least 4 characters.\nEnter a book title")
+        title = input("> ")
+    print("Enter a author")
+    author = input("> ")
+    while len(author) < 4:
+        print("Author must be at least 4 characters.\nEnter author")
+        author = input("> ")
+    print("Enter edition")
+    edition = input("> ")
+    while not edition.isnumeric():
+        print("Edition cannot only be numbers.\nEnter edition")
+        edition = input("> ")
+    print("Enter course number")
+    course_number = input("> ")
+    while Validator.isValidCourseNum(course_number):
+        print("Course number must be 4 numbers")
+        course_number = input("> ")
+    print("Enter Department")
+    department = input("> ")
+    while Validator.isValidDepartment(department):
+        print("Department must be 4 letters")
+        department = input("> ")
+    print("Enter star ID")
+    star_id = input("> ")
+    while re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
+        print("Department must be a combination of 7 letters and numbers")
+        star_id = input("> ")
+    print("Enter isbn")
+    isbn = input("> ")
+    while Validator.isValidISBN(isbn):
+        print("ISBN must be 10 or 13 numbers")
+        isbn = input("> ")
+    print("Enter price")
+    price = input(">")
+    while Validator.isValidPrice(price):
+        print("Price must be a decimal number")
+        price = input("> ")
+    status = 'available'
+    book = Book.Book(title, author, edition, course_number, department, star_id, isbn, price, status)
+    # DB.newEntry(Book)
+    book.insert()
+# end addNewBook
 
 def searchByIsbn():
     # TODO remove this line when implementation completed.
