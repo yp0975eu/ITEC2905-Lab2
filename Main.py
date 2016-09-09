@@ -110,27 +110,27 @@ def addNewBook():
         edition = input("> ")
     print("Enter course number")
     course_number = input("> ")
-    while Validator.isValidCourseNum(course_number):
+    while not Validator.isValidCourseNum(course_number):
         print("Course number must be 4 numbers")
         course_number = input("> ")
     print("Enter Department")
     department = input("> ")
-    while Validator.isValidDepartment(department):
+    while not Validator.isValidDepartment(department):
         print("Department must be 4 letters")
         department = input("> ")
     print("Enter star ID")
     star_id = input("> ")
-    while re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
+    while not re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
         print("Department must be a combination of 7 letters and numbers")
         star_id = input("> ")
     print("Enter isbn")
     isbn = input("> ")
-    while Validator.isValidISBN(isbn):
+    while not Validator.isValidISBN(isbn):
         print("ISBN must be 10 or 13 numbers")
         isbn = input("> ")
     print("Enter price")
     price = input(">")
-    while Validator.isValidPrice(price):
+    while not Validator.isValidPrice(price):
         print("Price must be a decimal number")
         price = input("> ")
     status = 'available'
