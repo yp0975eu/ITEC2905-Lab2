@@ -130,11 +130,13 @@ def addNewBook():
     while not (star_id.isalnum() and len(star_id) == 8):
         print("Star ID must be a combination of 8 letters and numbers")
         star_id = input("> ")
-    print("Enter isbn")
+    print("Enter isbn without dashes or spaces")
     isbn = input("> ")
+    # strip out dashes and spaces
+    isbn = isbn.replace("-","").replace(" ", "")
     while not Validator.isValidISBN(isbn):
         print("ISBN must be 10 or 13 numbers")
-        isbn = input("> ")
+        isbn = input("> ").replace("-","").replace(" ", "")
     print("Enter price")
     price = input(">")
     while not Validator.isValidPrice(price):
@@ -148,22 +150,22 @@ def addNewBook():
 # end addNewBook
 
 def searchByIsbn():
-    # TODO remove this line when implementation completed.
-    print("This option to search by book ISBN has not been fully implemented.")
-    isbn = input("Please enter the ISBN number you wish to search for.  Leave out the dashes and spaces.")
+    # prompt for an isbn, validate it, and print search results of a book is found.
+    print("Please enter the ISBN number you wish to search for.  Leave out the dashes and spaces.")
+    isbn = input("> ")
     # pull out dashes and spaces if they're input anyway
     isbn = isbn.replace("-","").replace(" ", "")
     # TODO: finish implementation of search by ISBN.
     if Validator.isValidISBN(isbn):
-        print("You have entered a valid ISBN")
+        # print("You have entered a valid ISBN")
         results = search.by_book_isbn(isbn)
         if results:
             print_results(results)
         else:
-            print("No matches, try another search.")
+            print("No matches found. Try another search.")
     else:
         print("You have not entered a valid ISBN.")
-
+# end searchByIsbn
 
 
 # BODY OF CODE
