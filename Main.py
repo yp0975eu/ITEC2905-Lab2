@@ -58,26 +58,38 @@ def do_menu():
         elif userchoice == OPTION_BYCOURSENUMBER:
             searchByCourseNumber()
         elif userchoice == OPTION_BYTITLE:
-            title = input("Enter book title: ")
-            results = search.by_book_title(title)
-            print_results(results)
+            searchByTitle()
         elif userchoice == OPTION_BYISBN:
             searchByIsbn()
         elif userchoice == OPTION_BYDEPARTMENT:
-            dept = input("Enter department ID ")
-            results = search.by_department(dept)
-            print_results(results)
+            searchByDepartmentID()
         elif userchoice == OPTION_LISTDEPARTMENTS:
-            results = search.list_departments()
-            if results:
-                print_results(results)
-            else:
-                print("No departments to choose from , something is fishy :/")
+            listAllDepartments()
         elif userchoice == OPTION_ADD:
             # add a new book
             addNewBook()
         else:
             print("You have not made a valid selection.  Please try again.")
+
+
+def listAllDepartments():
+    results = search.list_departments()
+    if results:
+        print_results(results)
+    else:
+        print("No departments to choose from , something is fishy :/")
+
+
+def searchByDepartmentID():
+    dept = input("Enter department ID ")
+    results = search.by_department(dept)
+    print_results(results)
+
+
+def searchByTitle():
+    title = input("Enter book title: ")
+    results = search.by_book_title(title)
+    print_results(results)
 
 
 def searchByCourseNumber():
@@ -87,10 +99,6 @@ def searchByCourseNumber():
         course_number = input("A valid course number must have 4 digits.")
     results = search.by_course_num(course_number)
     print_results(results)
-    # if results != None:
-    #     print_results(results)
-    # else:
-    #     print("No matches, try a department search.")
 # end searchByCourseNumber
 
 def addNewBook():
