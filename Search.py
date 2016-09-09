@@ -23,17 +23,23 @@ class Search:
         sql = "SELECT * FROM books INNER JOIN courses WHERE books.course=courses.ROWID AND department = ?;"
         params = (department,)
         result = self.__DB.select(sql, params)
+        if not result:
+            return None
         return result
 
     def by_book_title(self, book_title):
         sql = "SELECT ROWID, * FROM books WHERE title LIKE ?;"
         params = ('%'+book_title+'%',)
         result = self.__DB.select(sql, params)
+        if not result:
+            return None
         return result
 
     def by_book_isbn(self, isbn):
         sql = "SELECT * FROM books WHERE isbn = ?;"
         params = (isbn,)
         result = self.__DB.select(sql, params)
+        if not result:
+            return None
         return result
 

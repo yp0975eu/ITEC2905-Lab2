@@ -57,23 +57,16 @@ def do_menu():
             break   # just being cautious so we don't leave an endless loop lingering.
         elif userchoice == OPTION_BYCOURSENUMBER:
             searchByCourseNumber()
-
         elif userchoice == OPTION_BYTITLE:
             title = input("Enter book title: ")
             results = search.by_book_title(title)
-            if results:
-                print_results(results)
-            else:
-                print("No matches, try a department search.")
+            print_results(results)
         elif userchoice == OPTION_BYISBN:
             searchByIsbn()
         elif userchoice == OPTION_BYDEPARTMENT:
             dept = input("Enter department ID ")
             results = search.by_department(dept)
-            if results:
-                print_results(results)
-            else:
-                print("No matches")
+            print_results(results)
         elif userchoice == OPTION_LISTDEPARTMENTS:
             results = search.list_departments()
             if results:
