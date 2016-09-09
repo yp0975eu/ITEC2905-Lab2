@@ -120,6 +120,7 @@ def addNewBook():
         department = input("> ")
     print("Enter star ID")
     star_id = input("> ")
+    # TODO: fix regex, it's not accepting "tk0654wm" which is Anna's ID.
     while not re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
         print("Department must be a combination of 7 letters and numbers")
         star_id = input("> ")
