@@ -39,8 +39,10 @@ def showmenu():
 
 
 def print_results(results):
-    for row in results:
-        print(row)
+    if results == None: print("No results found.  Try a different search.")
+    else:
+        for row in results:
+            print(row)
 
 def do_menu():
     # calls showmenu and acts on the choice made
@@ -91,10 +93,11 @@ def searchByCourseNumber():
     while not Validator.isValidCourseNum(course_number):
         course_number = input("A valid course number must have 4 digits.")
     results = search.by_course_num(course_number)
-    if results != None:
-        print_results(results)
-    else:
-        print("No matches, try a department search.")
+    print_results(results)
+    # if results != None:
+    #     print_results(results)
+    # else:
+    #     print("No matches, try a department search.")
 # end searchByCourseNumber
 
 def addNewBook():
