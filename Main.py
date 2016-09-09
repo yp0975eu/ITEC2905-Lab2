@@ -46,7 +46,7 @@ def print_results(results):
 
 def do_menu():
     # calls showmenu and acts on the choice made
-    # TODO build objects and methods to handle the user's selections.
+    # there are various methods to handle the user's selections.
     while True:
         showmenu()
         userchoice = input("> ")
@@ -114,7 +114,7 @@ def addNewBook():
         author = input("> ")
     print("Enter edition")
     edition = input("> ")
-    while not edition.isnumeric():
+    while edition.isnumeric():
         print("Edition cannot only be numbers.\nEnter edition")
         edition = input("> ")
     print("Enter course number")
@@ -159,9 +159,8 @@ def searchByIsbn():
     isbn = input("> ")
     # pull out dashes and spaces if they're input anyway
     isbn = isbn.replace("-","").replace(" ", "")
-    # TODO: finish implementation of search by ISBN.
     if Validator.isValidISBN(isbn):
-        # print("You have entered a valid ISBN")
+        # if we have valid input, search by ISBN.
         results = search.by_book_isbn(isbn)
         if results:
             print_results(results)
