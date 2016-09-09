@@ -22,4 +22,4 @@ We have the following features:
 
 ## Known bugs
 
-* none
+* Books with new deparments and/or courses are not added to courses table.
