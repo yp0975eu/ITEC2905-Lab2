@@ -27,7 +27,7 @@ def showmenu():
             'Search by ISBN',
             'List departments',
             'Search by department',
-            'Add',
+            'Add a book',
             'Quit']
     count = 0
     for option in menu:
@@ -121,8 +121,9 @@ def addNewBook():
     print("Enter star ID")
     star_id = input("> ")
     # TODO: fix regex, it's not accepting "tk0654wm" which is Anna's ID.
-    while not re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
-        print("Department must be a combination of 7 letters and numbers")
+    # while not re.match("[A-Za-z0-9]{7}", star_id) is None or len(star_id) > 7:
+    while not (star_id.isalnum() and len(star_id) == 8):
+        print("Star ID must be a combination of 8 letters and numbers")
         star_id = input("> ")
     print("Enter isbn")
     isbn = input("> ")
@@ -138,6 +139,7 @@ def addNewBook():
     book = Book.Book(title, author, edition, course_number, department, star_id, isbn, price, status)
     # DB.newEntry(Book)
     book.insert()
+    print("Your book has been successfully inserted.\n" + str(book))
 # end addNewBook
 
 def searchByIsbn():

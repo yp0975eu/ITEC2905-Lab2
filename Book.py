@@ -23,7 +23,7 @@ class Book():
         return self.title
 
     def getISBN(self):
-        return self.ISBN
+        return self.isbn
 
     # some setters
     def setCourseNum(self,ID):
@@ -93,7 +93,7 @@ class Book():
     def __str__(self):
         # this lets us stringify a Book's information
         return self.ID + ": " + self.title + ", " + self.edition + ", " \
-               + self.author+ ", " + self.courseNum + ", " + self.ISBN + ", " + self.price
+               + self.author+ ", " + self.courseNum + ", " + self.isbn + ", " + self.price
 # end Book
 
 
