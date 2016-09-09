@@ -54,14 +54,7 @@ def do_menu():
             exit()
             break   # just being cautious so we don't leave an endless loop lingering.
         elif userchoice == OPTION_BYCOURSENUMBER:
-            course_number = input("Enter course number: ")
-            # TODO Validate course numbers
-            # if Course.isValid(course_number)
-            results = search.by_course_num(course_number)
-            if results:
-                print_results(results)
-            else:
-                print("No matches, try a department search.")
+            searchByCourseNumber()
 
         elif userchoice == OPTION_BYTITLE:
             title = input("Enter book title: ")
@@ -91,6 +84,18 @@ def do_menu():
         else:
             print("You have not made a valid selection.  Please try again.")
 
+
+def searchByCourseNumber():
+    course_number = input("Enter course number: ")
+    # Validate course numbers
+    while not Validator.isValidCourseNum(course_number):
+        course_number = input("A valid course number must have 4 digits.")
+    results = search.by_course_num(course_number)
+    if results != None:
+        print_results(results)
+    else:
+        print("No matches, try a department search.")
+# end searchByCourseNumber
 
 def addNewBook():
     print("Enter a book title")

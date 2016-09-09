@@ -10,7 +10,7 @@ class Search:
         params = (course_num,)
         result = self.__DB.select(sql, params)
         if not result:
-            return True
+            return None
         return result
 
     def list_departments(self):
