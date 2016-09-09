@@ -43,12 +43,12 @@ class Book():
 
     def setSold(self):
         # a quick'n'easy way to set a book as having been sold
-        self.status = True
+        self.status = 'sold'
 
     # to check if Book sold and not availble
     # right way to code
     def isSold(self):
-        return self.status
+        return self.status == 'sold'
 
     # to add new Book to database
     def insert(self):
