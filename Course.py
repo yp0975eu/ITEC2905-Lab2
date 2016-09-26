@@ -71,7 +71,7 @@ class Course():
         return self.ID + ": " + self.Department + ", " + self.CourseNum
 
 # and some generic methods to pull data out of the database
-
+'''  THIS IS NOW HANDLED VIA DATABASE AND SEARCH OBJECTS
 def getByDepartment(Department):
     # this will run a database query and returns a list of all courses in a department
     courselist = []
@@ -132,3 +132,4 @@ def getByCourseID(CourseID):
         # return whatever we find - either a course object or None
         return course
 # end getByCourseID
+'''
